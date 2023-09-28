@@ -1,0 +1,37 @@
+<html>
+<head>
+   <script type="text/javascript">
+        var img = null;
+        var intervalId = null; // To store the interval ID
+
+        function init() {
+            img = document.getElementById('myimg');
+            img.style.position = 'relative';
+            img.style.left = '50px';
+        }
+
+        function moveRight() {
+            intervalId = setInterval(function () {
+                img.style.left = parseInt(img.style.left) + 5 + 'px'; // Adjust the movement speed
+            }, 50); // Adjust the interval for smoother movement
+        }
+
+        function stopMoving() {
+            clearInterval(intervalId); // Clear the interval to stop movement
+        }
+
+        window.onload = init;
+   </script>
+</head>
+
+<body>
+   <form>
+      <img id="myimg" src="https://www.javatpoint.com/oprweb/train1.png" />
+      <center>
+         <p>Click the following buttons to handle animation:</p>
+         <input type="button" value="Start" onclick="moveRight();" />
+         <input type="button" value="Stop" onclick="stopMoving();" />
+      </center>
+   </form>
+</body>
+</html>
